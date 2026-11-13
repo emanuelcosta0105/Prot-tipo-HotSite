@@ -1,0 +1,114 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Missão Glorioso | Protótipo</title><style>
+:root{font-family:Inter,Arial,sans-serif;color:#f7f7f7;background:#090909}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#262016,#090909 55%);display:flex;justify-content:center;padding:22px 12px}.phone{width:min(100%,430px);min-height:780px;border:2px solid #51452b;border-radius:28px;background:linear-gradient(#171717,#090909);padding:20px;box-shadow:0 15px 55px #000b}.status{display:flex;justify-content:space-between;font-size:12px;color:#aaa}.hero{text-align:center;padding:25px 0 12px}.star{font-size:52px;color:#f2c44c;filter:drop-shadow(0 0 12px #d59e30);animation:pulse 2.5s infinite}@keyframes pulse{50%{filter:drop-shadow(0 0 25px #f7c344)}}h1{font-size:26px;letter-spacing:2px;margin:6px 0}h2{font-size:19px;margin:10px 0}h3{font-size:15px;margin:8px 0}p{color:#c7c7c7;line-height:1.45;font-size:13px}.gold{color:#f2c44c}.muted{color:#aaa;font-size:12px}.panel{border:1px solid #39352d;background:#1d1d1d;border-radius:14px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#202020;border-radius:10px;padding:12px}.stat strong{display:block;color:#f2c44c;font-size:23px;margin-top:4px}.btn{display:block;width:100%;padding:14px 10px;margin:9px 0;border-radius:10px;background:#171717;border:1px solid #6b5a34;color:white;font-weight:750;letter-spacing:.4px;cursor:pointer}.btn.primary{background:#efbf44;color:#111;border-color:#efbf44}.btn:active{transform:scale(.99)}.btn.small{padding:10px;margin:4px 0;font-size:12px}.bar{height:8px;border-radius:20px;background:#393939;overflow:hidden;margin:8px 0 14px}.fill{height:100%;background:#f2c44c;transition:width .35s}input[type="text"],input[type="email"],input[type="tel"]{width:100%;padding:12px;background:#222;border:1px solid #665b42;border-radius:8px;color:#fff;font:inherit}
+.field{display:block;margin:13px 0}.field span{display:block;color:#bbb;font-size:12px;margin-bottom:6px}
+.checkline{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#ddd;line-height:1.4;margin:14px 0}.checkline input{accent-color:#efbf44;margin-top:2px}
+.screen{display:none}.screen.active{display:block}.top{display:flex;align-items:center;gap:12px;margin:16px 0}.back{border:1px solid #665b42;border-radius:9px;background:transparent;color:#fff;padding:8px 12px;cursor:pointer}.item{border:1px solid #3c3c3c;border-radius:12px;padding:12px;margin:9px 0;display:flex;align-items:center;justify-content:space-between;gap:10px}.item.done{border-color:#9e7c31;background:#242016}.pill{font-size:11px;border:1px solid #78612d;border-radius:20px;padding:5px 8px;color:#f2c44c;white-space:nowrap}.rank{display:grid;grid-template-columns:25px 1fr auto;gap:8px;align-items:center;border-bottom:1px solid #333;padding:12px 0}.rank small{display:block;color:#aaa;margin-top:4px}.notice{border-left:3px solid #f2c44c;padding:10px;background:#272116;color:#eee;font-size:12px;line-height:1.5}.footer{font-size:11px;color:#888;text-align:center;padding:18px 0}.tabs{display:flex;gap:6px}.tabs button{flex:1;font-size:11px}.hide{display:none!important}select{background:#222;color:white;border:1px solid #665b42;border-radius:8px;padding:10px;width:100%} .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#f2c44c;color:#111;padding:12px 18px;border-radius:12px;font-weight:bold;box-shadow:0 8px 20px #0009;max-width:90vw;display:none;z-index:3}
+
+ .timer-card{margin:14px 0;border:1px solid #9d7931;background:linear-gradient(120deg,#292110,#171717);border-radius:14px;padding:14px;text-align:center}.timer-label{font-size:11px;letter-spacing:1.3px;color:#e8ca7e;font-weight:750}.timer-clock{font-size:32px;letter-spacing:2px;font-weight:800;color:#f2c44c;font-variant-numeric:tabular-nums;margin:8px 0 4px}.timer-note{font-size:12px;color:#ccc}.timer-config{margin-top:12px;text-align:left}.timer-config label{display:block;color:#bcbcbc;font-size:11px;margin-bottom:6px}.timer-config input{width:100%;padding:10px;background:#222;border:1px solid #67542e;color:#fff;border-radius:8px;font-family:inherit;color-scheme:dark}.btn:disabled{opacity:.45;cursor:not-allowed} .scanner{position:relative;max-width:285px;aspect-ratio:1;margin:22px auto;border-radius:20px;background:radial-gradient(circle at center,#2d291b,#101010 72%);overflow:hidden;box-shadow:inset 0 0 50px #000;border:1px solid #55492e}.scanner:before{content:"";position:absolute;inset:18px;border:3px solid #e9bd4a;border-radius:18px;clip-path:polygon(0 0,30% 0,30% 6%,6% 6%,6% 30%,0 30%,0 0,70% 0,100% 0,100% 30%,94% 30%,94% 6%,70% 6%,70% 0,100% 70%,100% 100%,70% 100%,70% 94%,94% 94%,94% 70%,100% 70%,30% 100%,0 100%,0 70%,6% 70%,6% 94%,30% 94%,30% 100%)}.scanline{position:absolute;left:12%;right:12%;top:15%;height:2px;background:#ffd65d;box-shadow:0 0 18px 5px #e6b63777;animation:scanmove 2.5s ease-in-out infinite alternate}@keyframes scanmove{to{top:85%}}.qr-icon{position:absolute;inset:0;display:grid;place-content:center;font-size:68px;color:#f3ca60;opacity:.3}.scanner-label{text-align:center;color:#d9c58b;font-size:12px;letter-spacing:1.3px}.reveal{text-align:center;animation:pop .4s ease-out;border:1px solid #e7ba43;background:radial-gradient(circle at top,#3b2c0c,#191713 75%);box-shadow:0 0 25px #c49a2530}.reveal-star{font-size:43px;color:#ffd45a;filter:drop-shadow(0 0 15px #f3b933)}@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}.hint{text-align:center;font-size:12px;color:#aaa}
+</style></head><body><main class="phone"><div class="status"><span>07:07</span><span>●●●  ▰</span></div>
+<section id="welcome" class="screen active">
+<div class="hero"><div class="star">★</div><h1>MISSÃO<br>GLORIOSO</h1><p>A história alvinegra virou uma missão.</p></div>
+<div class="panel"><h2>ENTRE NA MISSÃO</h2><p>Identifique-se para começar a experiência.</p>
+<form id="entryForm" novalidate onsubmit="enterMission(event)">
+<label class="field"><span>NOME COMPLETO</span><input id="fanName" type="text" placeholder="Seu nome" required maxlength="90" autocomplete="name"></label>
+<label class="field"><span>E-MAIL</span><input id="fanEmail" type="email" placeholder="seuemail@exemplo.com" required maxlength="120" autocomplete="email"></label>
+<label class="field"><span>TELEFONE / WHATSAPP</span><input id="fanPhone" type="tel" inputmode="tel" placeholder="(21) 99999-9999" maxlength="16" autocomplete="tel" required></label>
+<label class="field"><span>CPF</span><input id="fanCpf" type="text" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" required autocomplete="off"></label>
+<label class="checkline"><input type="checkbox" id="member"><span>Sou sócio Camisa 7 (simulação de benefício)</span></label>
+<label class="checkline"><input type="checkbox" id="privacy"><span>Entendi que este é um protótipo demonstrativo e que os dados digitados não serão enviados nem armazenados.</span></label>
+<button class="btn primary" type="submit">COMEÇAR MISSÃO →</button>
+<button class="btn" type="button" onclick="enterDemo()">ENTRAR NO MODO DEMONSTRAÇÃO</button>
+<p id="entryError" role="alert" style="color:#ffcf7a;font-size:12px"></p></form>
+<p class="muted">Após preencher, clique em COMEÇAR MISSÃO para acessar as demais telas. Para testar, utilize dados fictícios. Este protótipo não possui cadastro real, verificação de sócio nem integração com CRM. Não utilize dados pessoais verdadeiros.</p>
+</div></section>
+<section id="home" class="screen"><div class="hero"><div class="star">★</div><h1>MISSÃO<br>GLORIOSO</h1><p>A história alvinegra virou uma missão.</p></div><div class="grid"><div class="stat"><span class="muted">SEUS PONTOS</span><strong id="points">0</strong><span class="muted" id="memberHint"></span></div><div class="stat"><span class="muted">SEU SETOR</span><select id="homeSector" aria-label="Escolha seu setor" onchange="chooseSector(this.value)" style="margin-top:8px;font-size:12px"><option value="">Escolha seu setor</option><option>Leste Inferior</option><option>Leste Superior</option><option>Oeste Inferior</option><option>Oeste Superior</option><option>Norte</option></select></div></div><div class="timer-card" aria-live="off"><div class="timer-label">⏱ TEMPO RESTANTE DA MISSÃO</div><div id="missionClock" class="timer-clock">02:59:59</div><div id="missionStatus" class="timer-note">A missão termina 1 hora antes do início do jogo.</div></div><button id="scanButton" class="btn primary" onclick="go('scan')">▣ SCANEAR QR CODE</button><button class="btn" onclick="go('legends')">★ COLEÇÃO LENDAS</button><button class="btn" onclick="go('extras')">⚡ BÔNUS ALVINEGRO</button><button class="btn" onclick="go('ranking')">🏆 RANKING</button><button class="btn" onclick="go('rules')">ⓘ COMO FUNCIONA</button></section>
+<section id="scan" class="screen"><div class="top"><button class="back" onclick="go('home')">←</button><h2>SCANEAR QR CODE</h2></div><p style="text-align:center">Aponte a câmera para um código espalhado pelo Niltão e descubra sua recompensa.</p><div class="timer-card"><div class="timer-label">ENCERRAMENTO DA MISSÃO</div><div id="scanClock" class="timer-clock">02:59:59</div><div class="timer-note">A leitura de códigos termina 1 hora antes do jogo.</div></div><div class="scanner"><div class="qr-icon">▦</div><div class="scanline"></div></div><div class="scanner-label">POSICIONE O QR CODE NA ÁREA DE LEITURA</div><div class="panel"><label class="muted" for="qr">DEMONSTRAÇÃO · ESCOLHA A DESCOBERTA</label><select id="qr"></select><button id="revealButton" class="btn primary" onclick="scan()">▣ REVELAR QR CODE</button><p class="hint">Nesta demonstração, a leitura é simulada. O nome da descoberta aparece após revelar.</p></div><div id="scanResult" class="panel hide" aria-live="polite"></div></section>
+<section id="legends" class="screen"><div class="top"><button class="back" onclick="go('home')">←</button><h2>COLEÇÃO LENDAS</h2></div><p>Descubra os grandes nomes e momentos do Glorioso.</p><div id="legendList"></div></section>
+<section id="extras" class="screen"><div class="top"><button class="back" onclick="go('home')">←</button><h2>BÔNUS ALVINEGRO</h2></div><p>10 QR Codes de bônus com pontuações variadas para aumentar a competição. Cada código pode ser resgatado uma única vez.</p><div class="grid"><div class="stat"><span class="muted">RESGATADOS</span><strong id="extrasFound">0/10</strong></div><div class="stat"><span class="muted">PONTOS DE BÔNUS</span><strong id="extrasPoints">0</strong></div></div><div id="extraList"></div></section>
+<section id="ranking" class="screen"><div class="top"><button class="back" onclick="go('home')">←</button><h2>RANKING</h2></div><p>O setor vencedor é definido pela <b class="gold">média de pontos por participante</b>, não pela soma total.</p><div class="panel"><label class="muted">ESCOLHA SEU SETOR</label><select id="mySector" onchange="chooseSector(this.value)"></select></div><div class="tabs"><button class="btn small primary" id="sectorTab" onclick="rankTab('sector')">SETORES</button><button class="btn small" id="individualTab" onclick="rankTab('individual')">INDIVIDUAL</button></div><div id="sectorRanks"></div><div id="individualRanks" class="hide"></div><p class="muted">Dados ilustrativos. Em uma versão real, a classificação seria atualizada pelo servidor.</p></section>
+<section id="rules" class="screen"><div class="top"><button class="back" onclick="go('home')">←</button><h2>COMO FUNCIONA</h2></div><div class="panel"><h3 class="gold">01 · Explore o Niltão</h3><p>Encontre QR Codes da Coleção Lendas e dos Bônus Alvinegro em locais autorizados do seu setor.</p><h3 class="gold">02 · Acumule pontos</h3><p>As seis primeiras lendas valem 100 pontos cada. A Estrela Solitária vale 500. Os 10 bônus alvinegros valem 25, 50, 75 ou 100 pontos.</p><h3 class="gold">03 · Benefício Camisa 7</h3><p>Sócios Camisa 7 pontuam em dobro <b>somente no ranking individual</b>. Na disputa Setor x Setor, os pontos são contabilizados sem multiplicador, para manter a competição equilibrada.</p><h3 class="gold">04 · Defenda seu setor</h3><p>O setor vencedor é aquele com a maior média de pontos-base por participante. Escolha seu setor na tela inicial.</p><h3 class="gold">05 · Tempo da missão</h3><p>A missão fica ativa até 1 hora antes do início da partida. Após esse horário, o escaneamento e a pontuação são encerrados. Neste protótipo, o cronômetro começa em 02:59:59.</p><h3 class="gold">06 · Resultados e premiação</h3><p>O resultado da disputa <b>Setor x Setor</b> será divulgado <b>15 minutos após o encerramento da missão</b>, com premiação do setor vencedor no mesmo momento, antes de a bola rolar. O <b>pódio individual (1º, 2º e 3º lugares)</b> será divulgado nas redes sociais oficiais do Botafogo em <b>D+1 (dia seguinte à partida)</b>. Os três primeiros colocados ganharão <b>kits comemorativos do Botafogo</b>, com premiações escalonadas: o kit do <b>1º lugar</b> será o mais completo, seguido pelo do <b>2º lugar</b> e pelo do <b>3º lugar</b>. A entrega será combinada com os vencedores.</p><h3 class="gold">07 · Critério de desempate</h3><p>Em caso de igualdade na pontuação individual, vence o torcedor que atingir a maior pontuação primeiro.</p><h3 class="gold">08 · Jogue com segurança</h3><p>Não atravesse áreas restritas nem se desloque durante a partida. Cada QR Code pontua apenas uma vez.</p></div><div class="notice">Protótipo demonstrativo: sem câmera, contas reais ou sincronização entre torcedores.</div></section>
+<div class="footer">DIA GLORIOSO · PROTÓTIPO INTERATIVO</div></main><div id="toast" class="toast" role="status"></div><script>
+'use strict';
+const legends=['Nilton Santos','Garrincha','Jairzinho','Túlio Maravilha','Jefferson','Libertadores 2024 — A Glória Eterna','Estrela Solitária'];
+const sectors=['Leste Inferior','Leste Superior','Oeste Inferior','Oeste Superior','Norte'];
+const extraTypes=[
+{id:'E1',name:'Bônus Alvinegro 01',pts:25},
+{id:'E2',name:'Bônus Alvinegro 02',pts:25},
+{id:'E3',name:'Bônus Alvinegro 03',pts:25},
+{id:'E4',name:'Bônus Alvinegro 04',pts:25},
+{id:'E5',name:'Bônus Alvinegro 05',pts:50},
+{id:'E6',name:'Bônus Alvinegro 06',pts:50},
+{id:'E7',name:'Bônus Alvinegro 07',pts:50},
+{id:'E8',name:'Bônus Alvinegro 08',pts:75},
+{id:'E9',name:'Bônus Alvinegro 09',pts:75},
+{id:'E10',name:'Bônus Alvinegro 10',pts:100}
+];
+const legendTypes=legends.map((name,i)=>({id:'L'+(i+1),name,pts:i===6?500:100}));const all=[...legendTypes,...extraTypes];
+const base=[{name:'Leste Inferior',pts:64200,people:120},{name:'Leste Superior',pts:47700,people:100},{name:'Oeste Inferior',pts:58800,people:105},{name:'Oeste Superior',pts:39300,people:90},{name:'Norte',pts:72000,people:150}];
+const state={found:new Set(),sector:'',tab:'sector',member:false,entered:false,fanName:''};
+const $=id=>document.getElementById(id);
+function go(id){if(!state.entered && id!=='welcome'){toast('Preencha a identificação para começar');return}if(id==='scan'&&!missionActive()){toast('Missão encerrada: escaneamento indisponível');return}document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));if(id==='ranking')renderRanking();if(id==='scan'){renderSelect();$('scanResult').classList.add('hide');}if(id==='legends')renderLegends();if(id==='extras')renderExtras();window.scrollTo(0,0)}
+function chooseSector(value){state.sector=value;$('homeSector').value=value;$('mySector').value=value;renderRanking();toast(value?'Setor definido: '+value:'Selecione seu setor')}
+function renderSelect(){const choices=all.filter(x=>!state.found.has(x.id));$('qr').innerHTML=choices.length?choices.map(x=>`<option value="${x.id}">${x.name} (+${x.pts} pts)</option>`).join(''):'<option value="">Todos os códigos já foram encontrados</option>';}
+function toast(msg){const el=$('toast');el.textContent=msg;el.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display='none',2200)}
+function scan(){if(!state.entered){go('welcome');return}if(!missionActive()){toast('Missão encerrada: faltam menos de 1 hora para o jogo');return}if(!state.sector){toast('Escolha seu setor na tela inicial antes de pontuar');go('home');$('homeSector').focus();return}const id=$('qr').value;const item=all.find(x=>x.id===id);if(!item||state.found.has(id)){toast('Código indisponível');return}state.found.add(id);$('scanResult').classList.remove('hide');$('scanResult').classList.add('reveal');$('scanResult').innerHTML=`<div class="reveal-star">★</div><div class="gold muted">${item.id.startsWith('L')?'LENDA REVELADA':'BÔNUS REVELADO'}</div><h2>${item.name}</h2><h1 class="gold">+${item.pts*(state.member?2:1)} PONTOS</h1><p class="muted">${state.member?'Camisa 7: 2x no individual · '+item.pts+' pontos-base para o setor':item.pts+' pontos-base para o setor'}</p><p>Você desbloqueou esta descoberta! Cada QR Code pode pontuar uma única vez.</p><button class="btn" onclick="go('${item.id.startsWith('L')?'legends':'extras'}')">VER ${item.id.startsWith('L')?'COLEÇÃO LENDAS':'BÔNUS ALVINEGRO'}</button>`;update();renderSelect();toast('+'+(item.pts*(state.member?2:1))+' pontos individuais!')}
+function total(){return all.filter(x=>state.found.has(x.id)).reduce((sum,x)=>sum+x.pts,0)}
+function individualTotal(){return total()*(state.member?2:1)}
+function enterDemo(){
+ state.fanName='Torcedor de demonstração';
+ state.member=$('member').checked;
+ state.entered=true;
+ go('home');update();toast('Bem-vindo à Missão Glorioso!');
+}
+function enterMission(event){
+ if(event)event.preventDefault();
+ const name=$('fanName').value.trim();
+ const email=$('fanEmail').value.trim();
+ const cpf=$('fanCpf').value.replace(/\D/g,'');
+ const phone=$('fanPhone').value.replace(/\D/g,'');
+ const err=$('entryError');
+ err.textContent='';
+ if(!name || !email || !cpf || !phone){
+   err.textContent='Para testar sem preencher os campos, clique em ENTRAR NO MODO DEMONSTRAÇÃO.';
+   return false;
+ }
+ if(!email.includes('@') || cpf.length!==11 || phone.length<10 || phone.length>11){
+   err.textContent='Confira o e-mail, o telefone (10 ou 11 dígitos) e o CPF fictício (11 dígitos), ou entre no modo demonstração.';
+   return false;
+ }
+ state.fanName='';state.member=$('member').checked;state.entered=true;
+ $('fanName').value='';$('fanEmail').value='';$('fanCpf').value='';$('fanPhone').value='';
+ go('home');update();toast('Bem-vindo à Missão Glorioso!');
+ return false;
+}
+function update(){
+  $('points').textContent=individualTotal().toLocaleString('pt-BR');
+  $('memberHint').textContent=state.member?'Camisa 7 · 2x no individual':'';
+  $('homeSector').value=state.sector;
+}
+
+function renderLegends(){$('legendList').innerHTML=legendTypes.map((x,i)=>`<div class="item ${state.found.has(x.id)?'done':''}"><div><span class="muted">LENDA ${String(i+1).padStart(2,'0')}</span><h3>${x.name}</h3>${i===6?'<span class="gold muted">★ QR CODE RARO</span>':''}</div><div class="pill">${state.found.has(x.id)?'✓ DESCOBERTA':'+'+x.pts+' pts'}</div></div>`).join('')}
+function renderExtras(){const found=extraTypes.filter(x=>state.found.has(x.id));$('extrasFound').textContent=found.length+'/10';$('extrasPoints').textContent=found.reduce((s,x)=>s+x.pts,0);$('extraList').innerHTML=extraTypes.map(x=>`<div class="item ${state.found.has(x.id)?'done':''}"><div><b>${x.name}</b><div class="muted">${x.pts===25?'COMUM':x.pts===50?'ESPECIAL':x.pts===75?'OURO':'RELÂMPAGO'}</div></div><span class="pill">${state.found.has(x.id)?'✓ RESGATADO':'+'+x.pts+' pts'}</span></div>`).join('')}
+function rankTab(tab){state.tab=tab;$('sectorRanks').classList.toggle('hide',tab!=='sector');$('individualRanks').classList.toggle('hide',tab!=='individual');$('sectorTab').classList.toggle('primary',tab==='sector');$('individualTab').classList.toggle('primary',tab==='individual')}
+function renderRanking(){const arr=base.map(x=>({...x,pts:x.pts+(state.sector===x.name?total():0),people:x.people+(state.sector===x.name&&state.found.size>0?1:0)})).map(x=>({...x,avg:x.pts/x.people})).sort((a,b)=>b.avg-a.avg);$('sectorRanks').innerHTML=arr.map((x,i)=>`<div class="rank"><b class="gold">${i===0?'🏆':i+1+'º'}</b><div><b>${x.name}</b><small>${x.pts.toLocaleString('pt-BR')} pts ÷ ${x.people} participantes</small></div><b class="gold">${x.avg.toFixed(1).replace('.',',')} pts</b></div>`).join('');$('individualRanks').innerHTML=`<div class="panel"><label class="muted">TORCEDORES · ${state.sector||'SELECIONE SEU SETOR'}</label>${[{name:'Torcedor 07',pts:1100},{name:'Torcedor 12',pts:950},{name:'Torcedor 21',pts:825},{name:'Você (simulação)',pts:individualTotal()}].sort((a,b)=>b.pts-a.pts).map((x,i)=>`<div class="rank"><b>${i+1}º</b><span>${x.name}</span><b class="gold">${x.pts} pts</b></div>`).join('')}</div>`;rankTab(state.tab)}
+// Contagem regressiva demonstrativa de 2h59m59s, sem campo de data.
+// A contagem recomeça ao recarregar a página.
+const missionDurationMs = (2 * 3600 + 59 * 60 + 59) * 1000;
+const missionEndsAt = Date.now() + missionDurationMs;
+function missionActive(){return Date.now() < missionEndsAt}
+function tickMission(){
+ const remain=Math.max(0,missionEndsAt-Date.now());
+ const hh=String(Math.floor(remain/3600000)).padStart(2,'0');
+ const mm=String(Math.floor(remain%3600000/60000)).padStart(2,'0');
+ const ss=String(Math.ceil(remain%60000/1000)).padStart(2,'0');
+ const display=remain>0?hh+':'+mm+':'+ss:'00:00:00';
+ $('missionClock').textContent=display;
+ $('scanClock').textContent=display;
+ const active=remain>0;
+ $('missionStatus').textContent=active?'A missão termina 1 hora antes do início do jogo.':'MISSÃO ENCERRADA · pontuação bloqueada';
+ $('scanButton').disabled=!active;
+ $('revealButton').disabled=!active;
+}
+tickMission();setInterval(tickMission,1000);
+$('mySector').innerHTML='<option value="">Selecione seu setor</option>'+sectors.map(s=>`<option value="${s}">${s}</option>`).join('');update();renderSelect();
+</script></body></html>
